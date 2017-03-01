@@ -6,22 +6,22 @@ angular.module('NarrowItDownApp', [])
 .service('MenuSearchService',MenuSearchService)
 .directive('foundItems',FoundItems);
 
-function FoundItems() {
-  var ddo = {
-    template: '{{item.name}}, {{item.short_name}}, {{item.description}}'
-  }
-    // scope: {
-    //   foundItems: '<',
-    //   onRemove: '&'
-    // }
-    //,
-    // controller: FoundItemsDirectiveController,
-    // controllerAs: 'founds',
-    // bindToController: true
-    // };
+// function FoundItems() {
+//   var ddo = {
+//     template: '{{item.name}}, {{item.short_name}}, {{item.description}}'
+//   }
+//     // scope: {
+//     //   foundItems: '<',
+//     //   onRemove: '&'
+//     // }
+//     //,
+//     // controller: FoundItemsDirectiveController,
+//     // controllerAs: 'founds',
+//     // bindToController: true
+//     // };
 
-  return ddo;
-}
+//   return ddo;
+// }
 
 //
 function FoundItems() {
@@ -38,12 +38,12 @@ function FoundItems() {
 }
 //
 
-function FoundItemsDirectiveController() {
-  var list = this;
+// function FoundItemsDirectiveController() {
+//   var list = this;
 
-    list.Delete = function () {
-//     for (var i = 0; i < list.items.length; i++) {
-//       var name = list.items[i].name;
+//     list.Delete = function () {
+// //     for (var i = 0; i < list.items.length; i++) {
+// //       var name = list.items[i].name;
 //       if (name.toLowerCase().indexOf("cookie") !== -1) {
 //         return true;
 //       }
