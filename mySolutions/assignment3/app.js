@@ -4,7 +4,7 @@
 angular.module('NarrowItDownApp', [])
 .controller('NarrowItDownController', NarrowItDownController)
 .service('MenuSearchService',MenuSearchService)
-.directive('foundItems',FoundItems);
+.directive('foundItems', FoundItems);
 
 function FoundItems() {
   var ddo = {

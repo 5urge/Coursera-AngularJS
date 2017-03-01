@@ -16,8 +16,11 @@
       <input type="text" placeholder="search term" class="form-control" ng-model="menu.searchTerm"></div>
     <div class="form-group narrow-button">
       <button class="btn btn-primary" ng-click="menu.found();">Narrow It Down For Me!</button>
-      
     </div>
+
+    <found-items items="menu.MatchedItems">
+      
+      </found-items> 
 
     <!-- found-items should be implemented as a component
     found-items="..." on-remove="...." 
@@ -38,8 +41,7 @@
       </div> -->
 
 
-      <found-items items="menu.MatchedItems">
-      </found-items> 
+
 
 
   </div>
