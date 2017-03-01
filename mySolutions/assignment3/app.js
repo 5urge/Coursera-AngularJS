@@ -13,6 +13,7 @@ function FoundItems() {
       items: '<', //will show up in the html doc as founds.items
       onRemove: '&'
     },
+    
     controller: FoundItemsDirectiveController,
     controllerAs: 'founds',
     bindToController: true
