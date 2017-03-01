@@ -6,7 +6,7 @@ angular.module('NarrowItDownApp', [])
 .service('MenuSearchService',MenuSearchService)
 .directive('foundItems',FoundItems);
 
-function foundItems() {
+function FoundItems() {
   var ddo = {
     templateURL: 'foundItems.html',
     scope: {
