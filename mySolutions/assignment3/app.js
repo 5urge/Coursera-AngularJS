@@ -10,7 +10,7 @@ function FoundItems() {
   var ddo = {
     templateURL: 'foundItems.html',
     scope: {
-      items: '<', //will show up in the html doc as founds.items
+      items: '=', //will show up in the html doc as founds.items
       onRemove: '&'
     },
 
