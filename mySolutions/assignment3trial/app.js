@@ -17,7 +17,7 @@ function ShoppingListDirective() {
     },
     // controller: 'ShoppingListDirectiveController as list',
     controller: ShoppingListDirectiveController,
-    controllerAs: 'list123',
+    controllerAs: 'list',
     bindToController: true
   };
 
