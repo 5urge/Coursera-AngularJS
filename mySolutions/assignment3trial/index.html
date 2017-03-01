@@ -11,12 +11,12 @@
     <h1>Directives with Their Own Controllers</h1>
 
     <!-- LIST #1 - unlimited items -->
-    <div id="list" ng-controller='ShoppingListController as listNew'>
+    <div id="list" ng-controller='ShoppingListController as list'>
       <input type="text" ng-model="list.itemName" placeholder="item name">
       <input type="text" ng-model="list.itemQuantity" placeholder="quantity">
       <button ng-click="list.addItem();">Add Item</button>
 
-      <shopping-list items="listNew.items" title="{{list.title}}"></shopping-list>
+      <shopping-list items="listD.items" title="{{list.title}}"></shopping-list>
 
     </div>
 
