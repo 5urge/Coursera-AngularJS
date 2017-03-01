@@ -14,6 +14,7 @@ function ShoppingListDirective() {
     scope: {
       items: '<',
       title: '@'
+      
     },
     // controller: 'ShoppingListDirectiveController as list',
     controller: ShoppingListDirectiveController,
