@@ -38,6 +38,7 @@ NarrowItDownController.$inject = ['MenuSearchService'];
           else{
               menu.message = "";
               }
+        return menu.MatchedItems;
             
     });  
   };
