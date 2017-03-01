@@ -11,15 +11,32 @@ function FoundItems() {
     templateURL: 'foundItems.html',
     scope: {
       items: '<' //will show up in the html doc as founds.items
-    }
+    },
+    controller: FoundItemsDirectiveController,
+    controllerAs: 'founds',
+    bindToController: true
   };
 
   return ddo;
 }
 
+function FoundItemsDirectiveController() {
+  var list = this;
+
+  list.cookiesInList = function () {
+    for (var i = 0; i < list.items.length; i++) {
+      var name = list.items[i].name;
+      if (name.toLowerCase().indexOf("cookie") !== -1) {
+        return true;
+      }
+    }
+
+    return false;
+  };
+}
+
 NarrowItDownController.$inject = ['MenuSearchService'];
   function NarrowItDownController(MenuSearchService) {
-
 
   var menu = this;
 
@@ -39,7 +56,6 @@ NarrowItDownController.$inject = ['MenuSearchService'];
           else{
               menu.message = "";
               }
-        return menu.MatchedItems;
             
     });  
   };
