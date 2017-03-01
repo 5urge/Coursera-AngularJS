@@ -6,12 +6,12 @@ angular.module('NarrowItDownApp', [])
 .service('MenuSearchService',MenuSearchService)
 .directive('foundItems',FoundItems);
 
-function FoundItems() {
+function foundItems() {
   var ddo = {
     templateURL: 'foundItems.html',
     scope: {
-      items: "<", //will show up in the html doc as founds.items
-      onRemove: "&"
+      items: '<', //will show up in the html doc as founds.items
+      onRemove: '&'
     },
     controller: FoundItemsDirectiveController,
     controllerAs: 'founds',
