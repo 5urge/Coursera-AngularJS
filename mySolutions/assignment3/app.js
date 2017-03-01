@@ -31,7 +31,7 @@ function FoundItems() {
       items: "<", //will show up in the html doc as founds.items
     },
     controller: FoundItemsDirectiveController,
-    controllerAs: 'founds',
+    controllerAs: 'founds',asd
     bindToController: true
   };
   return ddo;
