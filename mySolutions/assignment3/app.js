@@ -32,7 +32,7 @@ function FoundItems() {
       onRemove: "&"
     },
     controller: FoundItemsDirectiveController,
-    controllerAs: 'founds',asd
+    controllerAs: 'founds',
     bindToController: true
   };
   return ddo;
