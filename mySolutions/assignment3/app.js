@@ -13,7 +13,7 @@ function FoundItems() {
       items: '<', //will show up in the html doc as founds.items
       onRemove: '&'
     },
-    
+
     controller: FoundItemsDirectiveController,
     controllerAs: 'founds',
     bindToController: true
@@ -50,6 +50,7 @@ NarrowItDownController.$inject = ['MenuSearchService'];
     promise.then(function(result) {
         console.log(result);
         menu.MatchedItems = result;
+        console.log(menu.MatchedItems);
         if (menu.MatchedItems.length == 0){
               menu.message = "Nothing Found";
               console.log(menu.message);
