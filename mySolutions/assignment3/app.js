@@ -29,6 +29,7 @@ function FoundItems() {
     templateURL: 'foundItems.html',
     scope: {
       items: "<", //will show up in the html doc as founds.items
+      onRemove: "&"
     },
     controller: FoundItemsDirectiveController,
     controllerAs: 'founds',asd
@@ -38,20 +39,13 @@ function FoundItems() {
 }
 //
 
-// function FoundItemsDirectiveController() {
-//   var list = this;
+function FoundItemsDirectiveController() {
+  var list = this;
 
-//     list.Delete = function () {
-// //     for (var i = 0; i < list.items.length; i++) {
-// //       var name = list.items[i].name;
-//       if (name.toLowerCase().indexOf("cookie") !== -1) {
-//         return true;
-//       }
-//     }
-
-//     return false;
-//   };
-// }
+    list.Delete = function () {
+       list.MatchedItems.splice(itemIndex, 1);
+      }
+}
 
 
 
