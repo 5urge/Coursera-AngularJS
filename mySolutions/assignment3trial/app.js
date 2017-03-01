@@ -13,6 +13,8 @@ function ShoppingListDirective() {
     templateUrl: 'shoppingList.html',
     scope: {
       items: '<',
+
+      
       title: '@'
       
     },
