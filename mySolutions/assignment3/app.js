@@ -31,10 +31,12 @@ function FoundItems() {
       items: "<", //will show up in the html doc as founds.items
       onRemove: "&"
     },
+
     controller: FoundItemsDirectiveController,
     controllerAs: 'founds',
     bindToController: true
   };
+
   return ddo;
 }
 //
@@ -44,7 +46,7 @@ function FoundItemsDirectiveController() {
 
     list.Delete = function () {
        list.MatchedItems.splice(itemIndex, 1);
-      }
+      };
 }
 
 
