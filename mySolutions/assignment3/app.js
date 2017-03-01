@@ -10,31 +10,11 @@ function FoundItems() {
   var ddo = {
     templateURL: 'foundItems.html',
     scope: {
-      items: '=', //will show up in the html doc as founds.items
-      onRemove: '&'
-    },
-
-    controller: FoundItemsDirectiveController,
-    controllerAs: 'founds',
-    bindToController: true
+      items: '<' //will show up in the html doc as founds.items
+    }
   };
 
   return ddo;
-}
-
-function FoundItemsDirectiveController() {
-  var list = this;
-
-  list.cookiesInList = function () {
-    for (var i = 0; i < list.items.length; i++) {
-      var name = list.items[i].name;
-      if (name.toLowerCase().indexOf("cookie") !== -1) {
-        return true;
-      }
-    }
-
-    return false;
-  };
 }
 
 NarrowItDownController.$inject = ['MenuSearchService'];
