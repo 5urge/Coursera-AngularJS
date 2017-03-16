@@ -8,17 +8,20 @@ angular.module('NarrowItDownApp', [])
 
 function FoundItems() {
   var ddo = {
-    template: '{{ item.name }}, {{ item.short_name }}, {{ item.description }}',
-    // scope: {
-    //   found: '<' //will show up in the html doc as founds.items
-    // },
-    // controller: FoundItemsDirectiveController,
-    // controllerAs: 'founds',
-    // bindToController: true
+    templateUrl: 'foundItems.html',
+    scope: {
+      found: '<', //will show up in the html doc as dir.found
+      onRemove: '&'
+    },
+    controller: NarrowItDownController,
+    controllerAs: 'menu',
+    bindToController: true
   };
 
   return ddo;
 }
+
+
 
 // function FoundItemsDirectiveController() {
 //   var list = this;
@@ -44,7 +47,7 @@ NarrowItDownController.$inject = ['MenuSearchService'];
 
 
   menu.found = function () {
-    var promise = MenuSearchService.getItemsForCategory(menu.searchTerm);
+    var promise = MenuSearchService.getMatchedMenuItems(menu.searchTerm);
     promise.then(function(result) {
         //console.log(result);
         menu.MatchedItems = result;
@@ -56,9 +59,7 @@ NarrowItDownController.$inject = ['MenuSearchService'];
           else{
               menu.message = "";
               }
-
-            menu.MatchedItems = result
-            
+            console.log(menu.MatchedItems);
     });  
   };
 
@@ -76,28 +77,44 @@ function MenuSearchService ($http) {
   var service = this;
 
 
-  service.getItemsForCategory = function(categoryShortName) {
-    return $http({
+  service.getMatchedMenuItems = function (searchTerm) {
+    
+
+  return $http({
       method: "GET",
       url: "https://davids-restaurant.herokuapp.com/menu_items.json"
-          }).then(function (response) {
-            var foundItems = [];
-            var allItems = response.data.menu_items;
-            var length = allItems.length;
-
-            for(var i = 0; i < length; i++) {
-              var item = allItems[i];
-              if (item.short_name.indexOf(categoryShortName) != -1) {
-                foundItems.push(item);
-              }
-            }
+    }).then(function (response) {
+          var foundItems = [];
+          if(searchTerm.length == 0) {
             return foundItems;
-            });// end of .then
-            
-  };//end of getItemsForCategory
+          }
 
 
+      // process result and only keep items that match
+      var allItems = response.data.menu_items;
+      var length = allItems.length;
+
+      for (var i = 0; i < length; i++) {
+          var item = allItems[i];
+          if (item.description.indexOf(searchTerm) != -1) {
+            foundItems.push(item);
+          }
+      }
+      // return processed items
+      return foundItems;
+  });
+
+  }; //end of getMatchedItems
 
 }//end of service
+
+
+
+
+
+
+
+
+
 
 })();
