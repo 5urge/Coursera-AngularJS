@@ -1,0 +1,64 @@
+<div class="container">
+  <h3>Sign up for the newsletter</h1>
+
+  <form name="newsLetterForm" novalidate>
+
+
+      <input type="text" name="firstName" placeholder="Enter first name"
+        ng-model="signUp.user.firstName"
+        required>
+      <span
+        ng-if="newsLetterForm.firstName.$invalid && newsLetterForm.firstName.$touched">
+        Required field
+      </span>
+      <br>
+
+      <input type="text" name="lastName" placeholder="Enter last name"
+        ng-model="signUp.user.lastName"
+        required>
+      <span
+        ng-if="newsLetterForm.lastName.$invalid && newsLetterForm.lastName.$touched">
+        Required field
+      </span>
+      <br>
+
+      <input type="email" name="emailAddress" placeholder="Enter email"
+        ng-model="signUp.user.email"
+        required>
+      <span
+        ng-if="newsLetterForm.emailAddress.$invalid && newsLetterForm.emailAddress.$touched">
+        Must be a valid email address: handle@domain format.
+      </span>
+      <br>
+
+      <input type="text" name="phoneNumber" placeholder="Phone ###-###-####"
+        ng-model="signUp.user.phone"
+        pattern="(\d{3})-(\d{3})-(\d{4})">
+      <span
+        ng-if="newsLetterForm.phoneNumber.$invalid && newsLetterForm.phoneNumber.$touched">
+        Phone must be in the format ###-###-####.
+      </span>
+      <br>
+
+      <input type="text" name="menuNumber" placeholder="Fave dish number"
+        ng-model="signUp.user.menuNumber"
+        required>
+      <span
+        ng-if="newsLetterForm.menuNumber.$invalid && newsLetterForm.menuNumber.$touched">
+        Please enter menu number
+      </span>
+      <span>{{signUp.message}}
+      </span>
+      <br>
+
+      <button
+          ng-disabled="newsLetterForm.$invalid"
+          ng-click="signUp.submit()">Submit</button>
+
+      <div ng-if="signUp.completed">
+          <h3>Your information has been saved </h3>
+        </div>
+
+
+  </form>
+</div>
