@@ -7,7 +7,9 @@
     <span ng-if="myInfoCtrl.myInfo.phoneNumber">Phone: {{myInfoCtrl.myInfo.phoneNumber}}<br> </span>
     Fave item name: {{myInfoCtrl.myInfo.itemName}}<br>
     Item description: {{myInfoCtrl.myInfo.itemDescription}} <br><br>
-    <img src="images/menu/{{myInfoCtrl.myInfo.itemCategoryName}}/{{myInfoCtrl.myInfo.itemCategoryName}}.jpg" alt="{{myInfoCtrl.myInfo.itemDescription}}">
+
+    
+    <img src="https://gorby-course5.herokuapp.com/images/{{myInfoCtrl.myInfo.itemName}}.jpg" alt="{{myInfoCtrl.myInfo.itemDescription}}">
   </div>
   <h3> <a ui-sref="public.signUp" ng-if="myInfoCtrl.signedUp"> You haven't singed yet! Sign up Now! </a> </h3>
 </div>
